@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevX Company | مستقبل البرمجة</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;500;700&display=swap');
+        body { font-family: 'Tajawal', sans-serif; background-color: #0a0a0b; color: #e4e4e7; margin: 0; overflow-x: hidden; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .gradient-text { background: linear-gradient(90deg, #3b82f6, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        /* تأثير الضوء الذي يتبع الماوس */
+        .cursor-glow {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(59, 130, 246, 0.15) 0%, transparent 50%);
+            pointer-events: none; z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cursor-glow"></div>
+
+    <nav class="fixed w-[90%] z-50 glass mt-4 left-1/2 -translate-x-1/2 rounded-full px-6 py-3 flex justify-between items-center">
+        <div class="text-xl font-bold gradient-text">DevX Company</div>
+        <div class="hidden md:flex gap-8 text-sm font-medium">
+            <a href="#" class="hover:text-blue-400 transition">الرئيسية</a>
+            <a href="#services" class="hover:text-blue-400 transition">خدماتنا</a>
+            <a href="https://wa.me/201004293582" target="_blank" class="text-green-400 hover:scale-105 transition">واتساب</a>
+        </div>
+        <a href="https://wa.me/201004293582" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full text-sm transition font-bold">تواصل معنا</a>
+    </nav>
+
+    <section class="h-screen flex flex-col justify-center items-center px-6 text-center">
+        <div class="glass p-2 px-4 rounded-full text-xs mb-6 border-blue-500/30 text-blue-400 animate-pulse">
+            نحن هنا لنصنع الفارق الرقمي
+        </div>
+        <h1 id="welcome-text" class="text-4xl md:text-6xl font-bold mb-6"></h1>
+        <p class="max-w-2xl mx-auto text-gray-400 text-lg mb-10">
+            متخصصون في أتمتة العمليات، بناء الأنظمة الذكية، وتطوير الويب بأحدث التقنيات العالمية.
+        </p>
+        <div class="flex gap-4">
+            <a href="https://wa.me/201004293582" target="_blank" class="bg-white text-black px-10 py-4 rounded-2xl font-bold hover:scale-105 transition shadow-lg shadow-white/5">ابدأ مشروعك</a>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center border-t border-white/5">
+        <p class="text-gray-500 text-sm">جميع الحقوق محفوظة &copy; 2026 | DevX Company</p>
+    </footer>
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        // تأثير كتابة النص الترحيبي
+        var typed = new Typed('#welcome-text', {
+            strings: ['DevX company ترحب بك', 'نحول أفكارك إلى واقع برمجى'],
+            typeSpeed: 50,
+            backSpeed: 30,
+            loop: true
+        });
+
+        // تحريك ضوء الخلفية مع الماوس
+        window.addEventListener('mousemove', e => {
+            document.documentElement.style.setProperty('--x', e.clientX + 'px');
+            document.documentElement.style.setProperty('--y', e.clientY + 'px');
+        });
+    </script>
+</body>
+</html>
